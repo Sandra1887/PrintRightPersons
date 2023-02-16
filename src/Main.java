@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class List {
+public class Main {
     public static void main(String[] arg) {
 
         var pList = new Person[10];
@@ -17,26 +17,27 @@ public class List {
 
         Arrays.sort(pList);
 
-        System.out.println("Yngre än 20:");
+        System.out.println("Younger than 20:");
         Methods.youngerThan20(pList);
 
-        System.out.println("\n20 år och yngre än 30:");
+        System.out.println("\n20 years and younger than 30:");
         Methods.y20youngerthan30(pList);
 
-        System.out.println("\nYngre än 20 och äldre än 29:");
+        System.out.println("\nYounger than 20 years and older than 29:");
         Methods.younger20older29(pList);
 
-            System.out.println();
-            Methods.youngest(pList);
-            Methods.oldest(pList);
+            System.out.println("\nYoungest:");
+            Methods.youngest(pList);            //or --> System.out.println("Youngest: " + pList[0].name + " " + pList[0].age);
+            System.out.println("\nOldest:");
+            Methods.oldest(pList);              // or --> System.out.println("Oldest: " + pList[9].name + " " + pList[9].age);
 
-        System.out.println("\nLista över personer med jämn ålder:");
+        System.out.println("\nList of persons with even numbers of age:");
         Methods.evenAge(pList);
 
-        System.out.println("\nSkriv ut alla men stoppa vid 40:");
+        System.out.println("\nList of everyone up to less than 40 years of age:");
         Methods.stop40(pList);
 
-        System.out.println("\nFödda på skottår: ");
+        System.out.println("\nBorn in a leap year:");
         Methods.printLeap(pList);
     }
 }

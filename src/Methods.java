@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Methods {
 
     static void youngerThan20(Person[] array) {
@@ -21,14 +23,14 @@ public class Methods {
     }
     static void youngest(Person[] array) {
         int youngest = array[0].age;
-        String youName = array[0].name;
+        String youngName = array[0].name;
         for (int i=0; i<array.length; i++) {
             if (array[i].age < youngest) {
                 youngest = array[i].age;
-                youName = array[i].name;
+                youngName = array[i].name;
             }
         }
-        System.out.println("Yngst: " + youName + " " + youngest);
+        System.out.println(youngName + " " + youngest);
     }
     static void oldest(Person[] array) {
         int oldest = 0;
@@ -39,7 +41,7 @@ public class Methods {
                 oldName = array[i].name;
             }
         }
-        System.out.println("Äldst: " + oldName + " " + oldest);
+        System.out.println(oldName + " " + oldest);
     }
 
     static void evenAge(Person[] array) {
@@ -66,7 +68,7 @@ public class Methods {
     }
 
     static boolean leapYear(int age) {
-        int y = 2023 - age;
+        int y = Calendar.getInstance().get(Calendar.YEAR) - age;
         if ((y % 4 == 0 && y % 100 != 0) || y % 400 == 0) {
             return true;
         } else {

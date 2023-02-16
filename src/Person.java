@@ -1,8 +1,8 @@
 import java.util.*;
 
-class Person implements Comparable<Person> {
-    String name;
-    int age;
+public class Person implements Comparable<Person> {
+    public String name;
+    public int age;
 
     Person() {}
 
@@ -12,14 +12,18 @@ class Person implements Comparable<Person> {
 
     public void setName(String name) {
         if (name != null) {
-        this.name = name;
+            this.name = name;
         } else {
             throw new NullPointerException();
         }
     }
 
     public void setAge(int age) {
+        if (age > 0) {
             this.age = age;
+        } else {
+            throw new NullPointerException();
+        }
     }
 
     public String getName(){
@@ -36,5 +40,10 @@ class Person implements Comparable<Person> {
             return this.age - i.getAge();
         }
         return this.name.compareTo(i.getName());
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + age;
     }
 }
