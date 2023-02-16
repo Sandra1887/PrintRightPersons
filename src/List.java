@@ -1,5 +1,4 @@
 import java.util.*;
-import javax.swing.*;
 
 public class List {
     public static void main(String[] arg) {
@@ -19,53 +18,25 @@ public class List {
         Arrays.sort(pList);
 
         System.out.println("Yngre än 20:");
-        for (int i = 0; i < pList.length; i++) {
-            if (pList[i].age < 20)//alla under 20 år
-                System.out.println(pList[i].name + "\t" + pList[i].age);
-            }
+        Methods.youngerThan20(pList);
+
         System.out.println("\n20 år och yngre än 30:");
-        for (int i = 0; i<pList.length; i++) {
-            if (pList[i].age == 20 || pList[i].age < 30)//alla som är 20 och alla yngre än 30
-                System.out.println(pList[i].name + "\t" + pList[i].age);
-        }
+        Methods.y20youngerthan30(pList);
+
         System.out.println("\nYngre än 20 och äldre än 29:");
-            for (int i = 0; i<pList.length; i++) {
-            if (pList[i].age < 20 || pList[i].age > 29)
-                System.out.println(pList[i].name + "\t" + pList[i].age);
-        }
+        Methods.younger20older29(pList);
 
-        int youngest = pList[0].age;
-        String youngName = pList[0].name;
-        for (int i = 0; i < pList.length; i++) {
-            if (pList[i].age < youngest) { // om i är mindre än youngest
-                youngest = pList[i].age;
-                youngName = pList[i].name;// youngest = i;
-            }
-        }
-        System.out.println("\nYngst: " + youngName + " " + youngest);
-
-        int oldest = pList[0].age;
-        String oldName = pList[0].name; //äldst på plats nr 0
-        for (int i = 0; i < pList.length; i++) {
-            if (pList[i].age > oldest) { // om age > oldest
-                oldest = pList[i].age;
-                oldName = pList[i].name;//oldest = age;
-            }
-        }
-        System.out.println("Äldst: " + oldName + " " + oldest);
+            System.out.println();
+            Methods.youngest(pList);
+            Methods.oldest(pList);
 
         System.out.println("\nLista över personer med jämn ålder:");
-        for (int i = 0; i<pList.length; i++) {
-            if (pList[i].age % 2 == 0) {
-                System.out.println(pList[i].name + " " + pList[i].age);
-            }
-        }
+        Methods.evenAge(pList);
+
         System.out.println("\nSkriv ut alla men stoppa vid 40:");
-        for (int i = 0; i<pList.length; i++) {
-            if (pList[i].age > 40) {
-                break;
-            }
-            System.out.println(pList[i].name + " " + pList[i].age);
-        }
+        Methods.stop40(pList);
+
+        System.out.println("\nFödda på skottår: ");
+        Methods.printLeap(pList);
     }
 }

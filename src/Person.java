@@ -4,7 +4,6 @@ class Person implements Comparable<Person> {
     String name;
     int age;
 
-
     Person() {}
 
     public Person(String name, int age) {
