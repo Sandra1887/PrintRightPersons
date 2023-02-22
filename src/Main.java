@@ -17,7 +17,7 @@ public class Main {
 
         Arrays.sort(pList);
 
-        System.out.println("Younger than 20:");
+        System.out.println("\nYounger than 20:");
         Methods.youngerThan20(pList);
 
         System.out.println("\n20 years and younger than 30:");
